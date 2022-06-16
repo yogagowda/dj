@@ -1,0 +1,50 @@
+{% extends 'base.html' %}
+{% block contactactive %} active {% endblock contactactive %}
+{% block css %}
+<style>
+.container{
+  min-height: 150vh;
+}
+</style>
+{% endblock css %}
+{% block body %}
+<div class="container mt-3">
+  <h2>Stacked form</h2>
+  <form action="ucontact" method="post">
+    {% csrf_token %}
+    <div class="mb-3 mt-3">
+      <label for="first_name">First_Name:</label>
+      <input type="text" class="form-control" id="first_name" placeholder="First_Name" name="first_name" required>
+    </div>
+
+    <div class="mb-3 mt-3">
+      <label for="last_name">Last_Name:</label>
+      <input type="text" class="form-control" id="last_name" placeholder="Last_Name" name="last_name" required>
+    </div>
+
+    <div class="mb-3 mt-3">
+      <label for="fullname">FullName:</label>
+      <input type="text" class="form-control" id="fullname" placeholder="FullName" name="fullname" required>
+    </div>
+    <div class="mb-3 mt-3">
+      <label for="email">Email:</label>
+      <input type="email" class="form-control" id="email" placeholder="Email" name="email" required>
+    </div>
+    <div class="mb-3">
+      <label for="pwd1">Password:</label>
+      <input type="password" class="form-control" id="pwd1" placeholder="Password" name="pswd1" required>
+    </div>
+    <div class="mb-3">
+      <label for="pwd2">ConformPassword:</label>
+      <input type="password" class="form-control" id="pwd2" placeholder="conformpassword" name="pswd2" required>
+    </div>
+    <div class="form-check mb-3">
+      <label class="form-check-label">
+        <input class="form-check-input" type="checkbox" name="remember"> Remember me
+      </label>
+    </div>
+    <button type="submit" class="btn btn-primary">Submit</button>
+  </form>
+</div>
+
+{% endblock body %}
